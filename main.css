@@ -1,0 +1,494 @@
+@font-face {
+    font-family: 'Hawaiian Punk', arial;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.conteiner{
+    width: 100vw;
+    min-height: 100vh;
+    background: url(images/y-so-serious-white.png) repeat;
+    text-align: center;
+    box-sizing: border-box;
+
+
+}
+
+
+.header {
+    background-image: url(images/update-1.jpg);
+    background-position: center;
+    background-size: cover;
+    width: 100vw;
+    min-height: 800px;
+    position: relative;
+
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.27);
+}
+
+
+.header-content {
+    position: relative;
+    text-align: center;
+    min-height: 250px;
+    margin: auto;
+    padding: 250px;
+    z-index: 2;
+
+}
+
+.header-content h1{
+    color: #303638f3;
+    font-family: "Beat My Guest", cursive;
+    font-size: 70px;
+    text-shadow: 3px 6px 4px #9DF;
+
+}
+.header-content p{
+    color: #303638f3;
+    font-family: "Beat My Guest", cursive;
+    font-size: 60px;
+    text-shadow: 3px 6px 4px #9DF;
+
+}
+
+.header-content span{
+    padding-top: 50px;
+    color: #303638f3;
+    font-family: "Beat My Guest", cursive;
+    font-size: 30px;
+    text-shadow: 3px 6px 4px #9DF;
+
+}
+
+.grid-container {
+    margin: 70px 100px 0 100px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 1px 1px;
+    min-height: 800px;
+}
+.text-cont{
+    margin: 20px auto 20px auto;
+    padding: 15px;
+}
+.text-cont h3{
+    font-size: 30px;
+    font-family: "Bookman Old Style";
+}
+.sec-content h1{
+    font-size: 40px;
+    font-family: "Bookman Old Style";
+}
+
+.text-cont p{
+    margin-top: 25px;
+    font-size: 20px;
+    text-align: center;
+    font-family: "Bookman Old Style";
+}
+.content{
+    text-align: center;
+    margin: 100px auto;
+}
+.sec-box{
+    position: relative;
+    padding: 100px;
+    z-index: 2;
+}
+.sec-box h1{
+
+    font-family: "Beat My Guest", cursive;
+    font-size: 50px;
+
+}
+.sec-box p{
+    margin-top: 40px;
+    font-size: 35px;
+    font-family: "Beat My Guest", cursive;
+    letter-spacing: 2px;
+}
+.video-cont{
+    cursor: pointer;
+    margin: 40px;
+    max-width: 95%;
+    max-height: 95%;
+    outline: none;
+    overflow: hidden;
+    background: black;
+}
+.text-cont-text{
+    padding: 40px 370px;
+}
+
+.btnbuy{
+    cursor: pointer;
+    margin-top: 70px;
+    margin-right: 50px;
+    margin-left: 51px;
+    font-size: 20px;
+    padding: 12px;
+    border-radius: 40px;
+    height: 50px;
+    outline: none;
+    box-shadow: 8px 10px 28px 6px rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+    background: rgb(255,212,3) linear-gradient(rgb(255,212,3), rgb(248,157,23));
+    transition: box-shadow .2s, border-color .2s;
+}
+/* Контейнер слайд-шоу */
+
+/* Собственно сам слайдер */
+.slider{
+    max-width: 46%;
+    position: relative;
+    margin: auto;
+    margin-bottom: 15px;
+}
+/* Картинка мастабируется по отношению к родительскому элементу */
+.slider .item img {
+    object-fit: cover;
+    width: 95%;
+    min-height: 1000px;
+    border: none !important;
+    box-shadow: none !important;
+}
+/* Кнопки вперед и назад */
+.slider .prev, .slider .next {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+}
+.slider .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+/* При наведении на кнопки добавляем фон кнопок */
+.slider .prev:hover,
+.slider .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+/* Заголовок слайда */
+.slideText {
+    position: absolute;
+    color: #fff;
+    font-size: 35px;
+    /* Выравнивание текста по горизонтали и по вертикали*/
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    /* Тень*/
+    text-shadow: 1px 1px 1px #000, 0 0 1em #000;
+}
+/* Кружочки */
+.slider-dots {
+    text-align: center;
+}
+.slider-dots_item{
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #ddd;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active,
+.slider-dots_item:hover {
+    background-color: #aaa;
+}
+/* Анимация слайдов */
+.slider .item {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+
+.fav {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    height: 46px;
+    padding: 5px;
+
+
+}
+
+.fav:hover{
+
+    transform: scale(1.2);
+}
+
+
+@media only screen and (min-width : 1224px) and (max-width : 1824px) {
+    .header-content h1{
+        color: #303638f3;
+        font-family: "Beat My Guest", cursive;
+        font-size: 100px;
+        text-shadow: 3px 6px 4px #9DF;
+    }
+    .text-cont h3 {
+        font-size: 38px;
+        font-family: "Bookman Old Style";
+    }
+    .text-cont p {
+        margin-top: 25px;
+        font-size: 20px;
+        text-align: center;
+        font-family: "Bookman Old Style";
+    }
+
+    .header-content span{
+        padding-top: 80px;
+        color: #303638f3;
+        font-family: "Beat My Guest", cursive;
+        font-size: 30px;
+        text-shadow: 3px 6px 4px #9DF;
+    }
+
+    .sec-content h1{
+        font-size: 60px;
+        font-family: "Bookman Old Style";
+    }
+
+
+
+
+
+}
+
+
+
+@media only screen and (min-device-width : 468px) and (max-device-width : 1024px) {
+    .header-content h1 {
+        color: #303638f3;
+        font-family: "Beat My Guest", cursive;
+        font-size: 44px;
+        text-shadow: 3px 6px 4px #9DF;
+    }
+    .header-content {
+        padding: 60px 0 0 0;
+
+    }
+
+    .header-content p {
+        font-size: 39px;
+        padding: 30px 0 50px 0
+    }
+
+    .header-content span {
+        padding-top: 50px;
+        font-size: 28px;
+
+    }
+
+
+    .grid-container {
+        margin: 40px auto 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        gap: 1px 1px;
+        min-height: 800px
+    }
+    .text-cont{
+        padding: 20px;
+    }
+    .header-content h1{
+        color: #303638f3;
+        font-family: "Beat My Guest", cursive;
+        font-size: 85px;
+        text-shadow: 3px 6px 4px #9DF;
+    }
+    .header-content p{
+        color: #303638f3;
+        font-family: "Beat My Guest", cursive;
+        font-size: 63px;
+        text-shadow: 3px 6px 4px #9DF;
+    }
+
+    .header-content span{
+        padding-top: 70px;
+        color: #303638f3;
+        font-family: "Beat My Guest", cursive;
+        font-size: 30px;
+        text-shadow: 3px 6px 4px #9DF;
+    }
+    .text-cont-text {
+        padding: 40px 30px;
+    }
+    .text-cont h3{
+        font-size: 44px;
+        font-family: "Bookman Old Style";
+    }
+    .sec-content h1{
+        font-size: 50px;
+        font-family: "Bookman Old Style";
+    }
+
+    .text-cont p{
+        margin-top: 25px;
+        font-size: 35px;
+        text-align: center;
+        font-family: "Bookman Old Style";
+    }
+    .slider .item img {
+
+        min-height: 325px;
+
+    }
+}
+
+
+
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+
+    .text-cont-text {
+        padding: 30px 10px;
+    }
+
+    .grid-container {
+        margin: 40px auto 0 auto;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(8, 1fr);
+        gap: 1px 1px;
+        min-height: 800px
+    }
+
+    .text-cont {
+        margin: 15px auto 15px auto;
+
+    }
+    .text-cont{
+        padding: 5px;
+    }
+    .header-content h1 {
+        color: #303638f3;
+        font-family: "Beat My Guest", cursive;
+        font-size: 52px;
+        text-shadow: 3px 6px 4px #9DF;
+    }
+    .header-content {
+        padding: 60px 0 0 0;
+
+    }
+
+        .header-content p {
+            font-size: 39px;
+            padding: 30px 0 50px 0
+        }
+
+    .header-content span {
+        padding-top: 50px;
+        font-size: 28px;
+
+    }
+    .sec-box {
+        padding: 100px 0 100px 0;
+
+
+    }
+    .video-cont {
+        cursor: pointer;
+        margin: 0;
+        max-width: 95%;
+        max-height: 95%;
+        outline: none;
+
+    }
+    .buttons {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 124px;
+        bottom: 0;
+    }
+    .buttons-block {
+        position: absolute;
+        text-align: center;
+        right: 32%;
+        bottom: 10px;
+    }
+    #previous {
+        position: absolute;
+        width: 26px;
+        left: 0;
+        height: 70px;
+        opacity: 0.6;
+    }
+    #next {
+        position: absolute;
+        width: 26px;
+        left: 0;
+        height: 70px;
+        opacity: 0.6;
+    }
+    .sec-content h1 {
+        font-size: 38px;
+
+    }
+
+    .btnbuy {
+        height: 70px;
+}
+    .slider {
+        max-width: 100%;
+    }
+    .slider .item img {
+        object-fit: cover;
+        width: 95%;
+        min-height: 325px;
+        border: none !important;
+        box-shadow: none !important;
+
+    }
+}
